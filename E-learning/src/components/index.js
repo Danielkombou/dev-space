@@ -14,6 +14,7 @@ import emily from '../assets/Emily.png'
 import michael from "../assets/Michael.png"
 import jason from "../assets/Jason.png"
 
+
 export const navLinks = [
 
     {
@@ -166,6 +167,7 @@ export const courseGrid = [
   },
 ]
 
+// testimonial array
 export const testimonials = [
   {
     text: "The internships provided a solid foundation for me. The instructors and mentors were knowledgeable and supportive, and the interactive environment was engaging. I highly recommend it!",
@@ -204,6 +206,160 @@ export const testimonials = [
     all: "Read Full Story"
   },
 ]
+
+// pricing section array
+export const priceBtn = [
+  {
+    id: 1,
+    buttonName: "Monthly",
+    content: [
+      {
+        plan: "Free Plan",
+        money: "$0",
+        planHead: "Available Feartures",
+        features: [
+            {
+              valid: true,
+              option1: "Access to select free courses",
+            },
+            {
+              valid: true,
+              option2: "Free career and academic orientations.",
+            },
+            {
+              valid: valid,
+              option3: "Basic community support.",
+            },
+            {
+              valid: true,
+              option4: "Certification upon completion.",
+            },
+            {
+              valid: true,
+              option5: "Ad-supported platform.",
+            },
+            {
+              valid: true,
+              option6: "Access to exclusive Pro program community forums.",
+            },
+            {
+              valid: true,
+              option7: "Early access internships and updates.",
+            },
+          ],
+      },
+      {
+        plan: "Pro Plan",
+        money: "$79",
+        features: [
+            {
+              valid: true,
+              option1: "Unlimited access to all interviews.",
+            },
+            {
+              valid: true,
+              option2: "Unlimited course materials and resources.",
+            },
+            {
+              valid: true,
+              option3: "Priority support from instructors.",
+            },
+            {
+              valid: true,
+              option4: "Course completion certificates.",
+            },
+            {
+              valid: true,
+              option5: "Ad-free experience.",
+            },
+            {
+              valid: true,
+              option6: "Access to exclusive Pro program community forums.",
+            },
+            {
+              valid: true,
+              option7: "Early access internships and updates.",
+            },
+          ],
+      },
+    ],
+  },
+  
+  {
+    id: 2,
+    buttonName: "Yearly",
+    content: [
+        {
+          plan: "Free Plan",
+          money: "$50",
+          features: [
+              {
+                valid: true,
+                option1: "Access to select free courses",
+              },
+              {
+                valid: true,
+                option2: "Free career and academic orientations.",
+              },
+              {
+                valid: true,
+                option3: "Basic community support.",
+              },
+              {
+           valid: true,
+                option4: "Certification upon completion.",
+              },
+              {
+               valid: true,
+                option5: "Ad-supported platform.",
+              },
+              {
+                valid: true,
+                option6: "Access to exclusive Pro program community forums.",
+              },
+              {
+               valid: true,
+                option7: "Early access internships and updates.",
+              },
+            ],
+        },
+        {
+          plan: "Pro Plan",
+          money: "$1000",
+          features: [
+              {
+               valid: true,
+                option1: "Unlimited access to all interviews.",
+              },
+              {
+              valid: true,
+                option2: "Unlimited course materials and resources.",
+              },
+              {
+                valid: true,
+                option3: "Priority support from instructors.",
+              },
+              {
+                valid: true,
+                option4: "Course completion certificates.",
+              },
+              {
+                valid: true,
+                option5: "Ad-free experience.",
+              },
+              {
+                valid: true,
+                option6: "Access to exclusive Pro program community forums.",
+              },
+              {
+                valid: true,
+                option7: "Early access internships and updates.",
+              },
+            ],
+        },
+      ],
+  },
+];
 
 
 

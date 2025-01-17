@@ -6,6 +6,7 @@ import imgContainer from "../../assets/container.png"
 import GridBenefit from "./GridBenefit";
 import CourseGrid from "./CourseGrid";
 import TestimonialGrid from "./TestimonialGrid";
+import OurPricing from "./OurPricing";
 
 function BenefitContent() {
   return (
@@ -71,6 +72,7 @@ const Home = () => {
       <GridBenefit />
       <CourseGrid />
       <TestimonialGrid />
+      <OurPricing />
     </div>
   );
 };

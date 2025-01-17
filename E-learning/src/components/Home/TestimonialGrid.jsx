@@ -10,6 +10,7 @@ function TestimonialGrid() {
 
   return (
     <div className="my-12">
+      {/* Head section */}
       <div className="flex justify-between items-end mb-10">
         <div className="">
           <p className="text-3xl font-semibold mb-2">Our Testimonials</p>
@@ -30,11 +31,10 @@ function TestimonialGrid() {
             return (
               <div
                 key={index}
-                className="flex flex-col justify-between rounded"
+                className="flex flex-col justify-betwee gap-"
               >
-                <div className="text-gray-500 mb-4 p-4 bg-slate-50">{testimonial.text}</div>
-                  <hr />
-                <div className="bg-slate-100 p-4 flex items-center justify-between rounded"> 
+                <div className="text-gray-500 bg-white/95 p-8 rounded-t-md">{testimonial.text}</div>
+                <div className="bg-white/70 px-8 py-4 flex items-center justify-between border-t border-t-slate-200 rounded-b-md"> 
                   <div className="flex items-center gap-4">
                         <img
                           src={testimonial.profile}
@@ -42,7 +42,7 @@ function TestimonialGrid() {
                           />
                       <h1>{testimonial.userName}</h1>
                           </div> 
-                  <button className="bg-slate-200 rounded">{testimonial.all}</button>
+                  <button className="bg-slate-100 p-2 rounded">{testimonial.all}</button>
                 </div>
               </div>
             );
