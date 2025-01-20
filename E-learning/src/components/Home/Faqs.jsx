@@ -60,11 +60,11 @@ function Faqs() {
 
 function QuestionHeader({ question, onClick, isActive }) {
   return (
-    <div onClick={onClick} className={`border rounded p-4 cursor-pointer `}>
+    <div className={`border rounded p-4 cursor-pointer `}>
       <div className="flex flex-col ">
         <div className="flex justify-between py-4 items-center">
           <h2 className="font-semibold">{question} </h2>
-          <button className=" bg-pink-100 rounded p-2 outline-none">
+          <button onClick={onClick} className=" bg-pink-100 rounded p-2 outline-none">
             {/* {isActive ? <X className="w-5 h-5" /> : <Plus className="w-5 h-5" />} */}
             <Plus
               className={`transform ${
@@ -73,10 +73,12 @@ function QuestionHeader({ question, onClick, isActive }) {
             />
           </button>
         </div>
-        <hr className={` flex ${isActive ? "block " : "hidden"}`} />
+        <hr className={` flex pb-4 ${isActive ? "block " : "hidden"}`} />
         <div className={`flex justify-between items-center bg-slate-100 p-4 rounded ${isActive ? "flex" : "hidden"}`}>
-          <p>Enroll Process for Different Courses</p>
+          <p>Enrollment Process for Different Courses</p>
+          <div className="rounded-full bg-white p-2">
           <ArrowRight className="w-5 h-5" />
+          </div>
         </div>
       </div>
     </div>
