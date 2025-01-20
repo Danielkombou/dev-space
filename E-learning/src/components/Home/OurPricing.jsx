@@ -11,7 +11,7 @@ function OurPricing() {
   const activeContent = priceBtn.find((button) => button.id === price)?.content
 
   return (
-    <div className="my-24">
+    <div className=" py-24 ">
       {/* Head section */}
       <div className="flex justify-between items-end mb-10">
         <div className="">

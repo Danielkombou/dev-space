@@ -7,6 +7,7 @@ import GridBenefit from "./GridBenefit";
 import CourseGrid from "./CourseGrid";
 import TestimonialGrid from "./TestimonialGrid";
 import OurPricing from "./OurPricing";
+import Faqs from "./Faqs";
 
 function BenefitContent() {
   return (
@@ -73,6 +74,7 @@ const Home = () => {
       <CourseGrid />
       <TestimonialGrid />
       <OurPricing />
+      <Faqs />
     </div>
   );
 };
