@@ -33,22 +33,22 @@ function OurPricing() {
           ))}
         </div>
         {/* price grid section */}
+      </div>
         <div>
             {activeContent.map((period, index) => (
                 <PricingContent
                 key={index}
-                {...period}
+                // {...period}
                  />
             ))}
         </div>
-      </div>
     </div>
   );
 }
 
 const PricingContent = ({plan, money, last, head, check, options, start}) => {
   return (
-    <div>
+    <div className="">
       <div>
         <button>{plan}</button>
         <p>

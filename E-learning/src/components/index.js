@@ -227,7 +227,7 @@ export const priceBtn = [
               option2: "Free career and academic orientations.",
             },
             {
-              valid: valid,
+              valid: true,
               option3: "Basic community support.",
             },
             {
