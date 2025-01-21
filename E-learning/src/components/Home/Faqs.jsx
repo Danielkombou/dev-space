@@ -9,16 +9,15 @@ const allFaqs = [
       "Absolutely! You can enroll in multiple courses simultaneously and access them at your convinience.",
   },
   {
-    id: 2,
-    question: "Can I enroll in multiples courses at once?",
+    question: "What kind of support can I expect from instructors?",
     answer:
-      "Absolutely! You can enroll in multiple courses simultaneously and access them at your convinience.",
+      "Our instructors provide timely support through live sessions, emails, and a dedicated Q&A section.",
   },
   {
-    id: 3,
-    question: "Can I enroll in multiples courses at once?",
+    question:
+      "Are the courses self-paced or do they have specific start and end dates?",
     answer:
-      "Absolutely! You can enroll in multiple courses simultaneously and access them at your convinience.",
+      "Courses are designed to be self-paced, but they also include suggested schedules to help you stay on track.",
   },
   {
     id: 4,
@@ -32,92 +31,104 @@ const allFaqs = [
     answer:
       "Absolutely! You can enroll in multiple courses simultaneously and access them at your convinience.",
   },
+  {
+    id: 5,
+    question: "Are there any prerequisites for the course?",
+    answer:
+      "Absolutely! You can enroll in multiple courses simultaneously and access them at your convinience.",
+  },
+  {
+    id: 5,
+    question: "Can I download the course material for offline access?",
+    answer:
+      "Absolutely! You can enroll in multiple courses simultaneously and access them at your convinience.",
+  },
+
 ];
 
-function Faqs() {
+const FaqHearder = () => {
   return (
-    <div className="bg-white flex gap-10 px-10 py-10 mb-10">
-      {/* Faqs text */}
-      <div className="leading-snug">
-        <h1 className="font-semibold text-xl md:text-4xl">
-          Frequently Asked Questions
-        </h1>
-        <p className="text-slate-600 pb-4">
-          Still you have any questions? Contact our team via
-          support@skillbridge.com
-        </p>
-        <button className="border rounded p-2 font-semibold">
-          See all FAQ's
-        </button>
-      </div>
-      {/* Faqs items */}
-      <div>
-        <Questions />
-      </div>
+    <div className="leading-snug p-2">
+      <h1 className="font-semibold text-xl md:text-4xl">
+        Frequently Asked Questions
+      </h1>
+      <p className="text-slate-600 pb-4">
+        Still you have any questions? Contact our team via
+        support@skillbridge.com
+      </p>
+      <button className="border rounded p-2 font-semibold">
+        See all FAQ's
+      </button>
     </div>
   );
-}
+};
 
-function QuestionHeader({ question, onClick, isActive }) {
+const FaqItem = ({ question, answer, isActive, onToggle }) => {
   return (
-    <div className={`border rounded p-4 cursor-pointer `}>
-      <div className="flex flex-col ">
-        <div className="flex justify-between py-4 items-center">
-          <h2 className="font-semibold">{question} </h2>
-          <button onClick={onClick} className=" bg-pink-100 rounded p-2 outline-none">
-            {/* {isActive ? <X className="w-5 h-5" /> : <Plus className="w-5 h-5" />} */}
-            <Plus
-              className={`transform ${
-                isActive ? "rotate-45 opacity-100 " : "rotate-0"
-              } transition-transform duration-300`}
-            />
-          </button>
-        </div>
-        <hr className={` flex pb-4 ${isActive ? "block " : "hidden"}`} />
-        <div className={`flex justify-between items-center bg-slate-100 p-4 rounded ${isActive ? "flex" : "hidden"}`}>
-          <p>Enrollment Process for Different Courses</p>
-          <div className="rounded-full bg-white p-2">
-          <ArrowRight className="w-5 h-5" />
+    <div className="border rounded-lg px-6 py-8 shadow-sm ">
+      {/* Question and Toggle */}
+      <div className="flex justify-between items-center cursor-pointer">
+        <p className="font-medium">{question}</p>
+        <div className="bg-orange-100 px-2.5 py-0.5 rounded-md">
+
+        <button
+          className={` transform transition-transform ${
+            isActive ? "rotate-45" : "rotate-0"
+          } text-3xl duration-300`}
+          onClick={onToggle}
+        >
+          +
+        </button>
+          </div>
+      </div>
+
+      {/* Answer Section */}
+      {isActive && (
+        <div className="mt-4">
+          <hr className="py-4"/>
+          <p className="text-gray-700 pb-4">{answer}</p>
+          <div className="mt-2 flex items-center justify-between rounded p-4 bg-slate-200">
+            <p>Enrollment Process for Different Courses</p>
+          <div className="rounded-full bg-white p-2 cursor-pointer">
+            <ArrowRight className="w-5 h-5" />
+          </div>
           </div>
         </div>
-      </div>
+      )}
     </div>
   );
-}
+};
 
-const Questions = () => {
+function Faqs() {
   const [activeIndex, setActiveIndex] = useState(null);
 
-  const handleQuestionClick = (index) => {
+  // Check and toggle the active index
+  const handleToggle = (index) => {
     setActiveIndex((prevIndex) => (prevIndex === index ? null : index));
   };
 
   return (
-    <div className="px-4 bg">
-      {allFaqs.map((question, index) => {
-        // some js here
-        return (
-          <div className="w-full grid grid-cols-1 gap-5" key={index}>
-            <div className="" key={question.id}>
-              <QuestionHeader
-                question={question.question}
-                onClick={() => handleQuestionClick(index)}
+    <div className="bg-white flex flex-col md:flex-row gap-2 px-8 py-14 mb-10">
+      <FaqHearder />
+
+      <div className="grid grid-cols-1 gap-4 flex-2 ">
+        {allFaqs.map((faq, index) => {
+          // some js here
+          return (
+            <div key={index} className="">
+              <FaqItem
+                key={index}
+                question={faq.question}
+                answer={faq.answer}
                 isActive={activeIndex === index}
+                onToggle={() => handleToggle(index)}
               />
-              {/* <p>{question.answer}</p> */}
             </div>
-            <div
-              className={`overflow-hidden transition max-h-0 duration-300 ${
-                activeIndex === index ? "max-h-[500px]" : ""
-              }`}
-            >
-              {question.answer}
-            </div>
-          </div>
-        );
-      })}
+          );
+        })}
+      </div>
     </div>
   );
-};
+}
 
 export default Faqs;

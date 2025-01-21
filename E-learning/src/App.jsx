@@ -5,6 +5,8 @@ import Courses from "./components/Courses";
 import Home from "./components/Home/Home";
 import Navbar from "./components/Navbar";
 import Pricing from "./components/Pricing";
+import Footer from "./components/Footer/Footer";
+
 
 function App() {
   return (
@@ -17,6 +19,7 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         {/* <Route path="/pricing" element={<Pricing />} /> */}
       </Routes>
+      <Footer />
     </div>
   );
 }
