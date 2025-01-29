@@ -7,9 +7,9 @@ function Navbar() {
   const { pathname } = useLocation();
 
   return (
-    <div className="sticky z-[999] top-0">
-      <header className="p-4 bg-orange-500 rounded " />
-      <div className="flex py-4 items-center justify-between px-20 bg-slate-100">
+    <div className="sticky z-[999] top-0 p-4 bg-slate-100">
+      <header className="p-4 bg-orange-500 rounded" />
+      <div className="flex py-4 items-center justify-between px-20 ">
         <div className="flex items-center ">
           <Link to="/" className="p-2 bg-orange-500 rounded mr-4">
            <img src={logo} alt="Logo" className="w-6 h-6" />

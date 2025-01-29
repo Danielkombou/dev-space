@@ -5,12 +5,12 @@ import React from 'react'
 const SocialProfiles = ({ profiles }) => {
     return (
         <div>
-            <h3>Social Profiles</h3>
-            <div className='flex items-center justify-between'>
+            <h3 className='font-semibold mb-4'>Social Profiles</h3>
+            <div className='flex items-center gap-4 '>
                 {profiles.map((profile, index) => (
                     <a
                         key={index}
-                        className=""
+                        className="bg-slate-100 p-2 rounded"
                         aria-label={profile.label}
                         href={profile.href}
                     >

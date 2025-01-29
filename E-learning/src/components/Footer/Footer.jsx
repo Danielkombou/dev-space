@@ -4,6 +4,7 @@ import FooterLinks from "./FooterLinks";
 import SocialProfiles from "./SocialProfiles";
 import { Facebook, Linkedin, Twitter } from "lucide-react";
 
+
 const homLinks = [
   { text: "Benefits", href: "#benefits" },
   { text: "Our internships", href: "#internships" },
