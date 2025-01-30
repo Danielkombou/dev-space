@@ -6,6 +6,7 @@ import Home from "./components/Home/Home";
 import Navbar from "./components/Navbar";
 import Pricing from "./components/Pricing";
 import Footer from "./components/Footer/Footer";
+import SlideAnimate from "./components/Home/SlideAnimate";
 
 
 function App() {
@@ -19,7 +20,9 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         {/* <Route path="/pricing" element={<Pricing />} /> */}
       </Routes>
+      <SlideAnimate direction="top">
       <Footer />
+      </SlideAnimate>
     </div>
   );
 }
