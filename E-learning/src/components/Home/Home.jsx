@@ -2,18 +2,30 @@ import React, { useState } from "react";
 import lines from "../../assets/Line.png";
 import thunder from "../../assets/thunder.png";
 import { Link } from "react-router-dom";
-import imgContainer from "../../assets/container.png"
+import imgContainer from "../../assets/container.png";
 import GridBenefit from "./GridBenefit";
 import CourseGrid from "./CourseGrid";
 import TestimonialGrid from "./TestimonialGrid";
 import OurPricing from "./OurPricing";
 import Faqs from "./Faqs";
+import SlideAnimate from "./SlideAnimate";
+import { motion } from 'framer-motion'
 
 function BenefitContent() {
+  const heroVariant = {
+    hidden: { opacity: 0, scale: 0.8 },
+    visible: { opacity: 1, scale: 1, transition: { duration: 1 } },
+  };
+
   return (
-    <div className="py-16 px-4 md:px-20 lg:px-40 xl:px-60">
+    <motion.div
+      initial="hidden"
+      animate="visible"
+      variants={heroVariant}
+      className="py-16 px-4 md:px-20 lg:px-40 xl:px-60"
+    >
       <BenefitSection />
-    </div>
+    </motion.div>
   );
 }
 
@@ -55,26 +67,32 @@ const BenefitSection = () => {
 
 const BenefitImage = () => {
   return (
-    <div className="rounded-md " >
+    <div className="rounded-md ">
       <img src={imgContainer} className="object-cover w-full h-full" />
     </div>
   );
 };
 
-
-
-
-
 const Home = () => {
   return (
     <div className="px-20">
       <BenefitContent />
-      <BenefitImage />
-      <GridBenefit />
-      <CourseGrid />
-      <TestimonialGrid />
+      <SlideAnimate>
+        <BenefitImage />
+      </SlideAnimate>
+      <SlideAnimate>
+        <GridBenefit />
+      </SlideAnimate>
+      <SlideAnimate>
+        <CourseGrid />
+      </SlideAnimate>
+      <slideAnimate>
+        <TestimonialGrid />
+      </slideAnimate>
       <OurPricing />
-      <Faqs />
+      <SlideAnimate>
+        <Faqs />
+      </SlideAnimate>
     </div>
   );
 };
