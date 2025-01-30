@@ -19,31 +19,31 @@ function BenefitContent() {
 
 const BenefitSection = () => {
   return (
-    <div className="space-y-6">
+    <div className="space-y-6 ">
       {/* Main title section */}
-      <div className="relative flex items-center bg-white p-4 rounded justify-center">
+      <div className="relative flex items-center lg:w-[700px] bg-white py-2.5 px-1 rounded justify-center">
         <div className="absolute -top-4 -left-4">
           <img src={lines} className="w-8 h-8" />
         </div>
         <span className="p-2 bg-orange-100 rounded">
           <img src={thunder} className="w-6 h-6" />
         </span>
-        <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold ml-4 text-center md:text-left leading-snug">
+        <h1 className="text-xl md:text-2xl lg:text-3xl font-semibold ml-4 text-center md:text-left leading-snug mt-4 md:mt-0">
           <span className="text-orange-500">Unlock</span> your potential with
           instant
         </h1>
       </div>
       {/* Subtitle section */}
-      <div className="flex flex-col items-center">
-        <p className="leading-loose text-2xl ">
+      <div className="flex flex-col items-center text-center">
+        <p className="leading-loose text-lg md:text-xl lg:text-2xl">
           with internships, career orientation and jop offers.
         </p>
-        <p className="text-sm text-center">
+        <p className="text-sm md:text-base lg:text-lg text-gray-500">
           Learn form Industry Expert and Enhance Your Skills
         </p>
       </div>
       {/* Action button */}
-      <div className="flex justify-center items-center mt-4 gap-4">
+      <div className="flex flex-col md:flex-row justify-center items-center mt-4 gap-4">
         <button className="bg-orange-500 text-white py-2 px-4 rounded">
           Explore internships
         </button>

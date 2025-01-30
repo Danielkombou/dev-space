@@ -38,13 +38,13 @@ const FooterBottom = () => {
 
 function Footer() {
   return (
-    <footer className="bg-white py-10 md:px-20">
+    <footer className="bg-white py-5 md:py-10 px-10 md:px-20">
       <div>
-        <div className="flex justify-between py-4 pb-10">
+        <div className="flex justify-between flex-col gap-8 md:flex-row py-4 pb-10">
           <div className=" flex flex-1">
             <Branding />
           </div>
-          <div className="flex flex-1 justify-between gap-4 ">
+          <div className="flex flex-1 flex-col md:flex-row justify-between gap-4 ">
             <FooterLinks title="Home" links={homLinks} />
             <FooterLinks title="About Us" links={aboutLinks} />
             <SocialProfiles profiles={socialProfiles} />

@@ -108,7 +108,7 @@ function Faqs() {
   };
 
   return (
-    <div className="bg-white flex flex-col md:flex-row gap-2 px-8 py-14 mb-10">
+    <div className="bg-white flex flex-col md:flex-row gap-2 px-8 py-14 mb-20">
       <FaqHearder />
 
       <div className="grid grid-cols-1 gap-4 flex-2 ">
