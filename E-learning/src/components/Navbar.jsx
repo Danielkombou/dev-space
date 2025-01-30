@@ -3,6 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import { navLinks } from "./index.js";
 import logo from "../assets/logo.svg";
 import { Menu, X } from "lucide-react";
+import { motion } from "framer-motion";
 
 const NavbarRoutes = () => {
   const { pathname } = useLocation();
@@ -34,8 +35,17 @@ function Navbar() {
     setIsOpen(!isOpen);
   };
 
+  const navbarVariants = {
+    hidden: { opacity: 0, y: -50, scale: 0.8 },
+    vissible: { opacity: 1, y: 0, scale : 1, transition: { duration: 3 } }
+  }
+
   return (
-    <div className="sticky z-[999] top-0 p-4 bg-slate-100">
+    <motion.div
+    initial="hidden"
+    animate="vissible"
+    variants={navbarVariants}
+     className="sticky z-[999] top-0 p-4 bg-slate-100">
       <header className="p-4 bg-orange-500 rounded" />
       {/* destop navbar */}
       <div className="flex py-4 items-center justify-between px-20 ">
@@ -105,7 +115,7 @@ function Navbar() {
       </div>
       </div>
       <hr />
-    </div>
+    </motion.div>
   );
 }
 

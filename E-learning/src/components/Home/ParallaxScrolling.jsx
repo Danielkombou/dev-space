@@ -1,5 +1,19 @@
-import { motion, easeInOut } from 'framer-motion'
+import { motion, easeInOut, useScroll, useTransform } from 'framer-motion'
 import React from 'react'
+
+// slow scrolling effect
+export function SlowScrolling({ children }) {
+    const { scrollYProgress } = useScroll()
+
+    const translateY = useTransform(scrollYProgress, [0, 1], [0, -50])
+
+    return (
+        <motion.div style={{ y: translateY }}>
+            {children}
+        </motion.div>
+    )
+}
+
 
 function ParallaxScrolling({ children}) {
     const parallaxVariants = {

@@ -9,13 +9,13 @@ import TestimonialGrid from "./TestimonialGrid";
 import OurPricing from "./OurPricing";
 import Faqs from "./Faqs";
 import SlideAnimate from "./SlideAnimate";
-import { motion } from "framer-motion";
-import ParallaxScrolling from "./ParallaxScrolling";
+import { delay, motion } from "framer-motion";
+import ParallaxScrolling, { SlowScrolling } from "./ParallaxScrolling";
 
 function BenefitContent() {
   const heroVariant = {
     hidden: { opacity: 0, scale: 0.8 },
-    visible: { opacity: 1, scale: 1, transition: { duration: 1 }, repeat: Infinity },
+    visible: { opacity: 1, scale: 1, transition: { duration: 1, delay : 3 }, repeat: Infinity },
   };
 
   return (
@@ -79,9 +79,9 @@ const Home = () => {
     <div className="px-20 overflow-hidden">
       <BenefitContent />
       {/* <SlideAnimate direction="top"> */}
-      <ParallaxScrolling>
+      <SlowScrolling>
         <BenefitImage />
-      </ParallaxScrolling>
+      </SlowScrolling>
       {/* </SlideAnimate> */}
       <SlideAnimate direction="left">
         <GridBenefit />
